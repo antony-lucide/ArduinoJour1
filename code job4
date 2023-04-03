@@ -1,0 +1,33 @@
+/*
+ Logic simulator AND
+ 
+ Input  SW1 SW2
+ Output LED1
+
+ LED1 = SW1 + SW2
+
+ created 2018
+ NextStep LLC <https:next-step.asia/>
+ by Kaz Ueno
+ 
+ This example code is in the public domain.
+ 
+*/
+ 
+// set pin numbers:
+const int SW1 = 4;     // the number of the pushbutton 1 pin
+const int SW2 = 5;     // the number of the pushbutton 2 pin
+ 
+const int LED1 =  8;   // the number of the LED 1 pin
+
+void setup()
+{
+  pinMode(LED1, OUTPUT);
+  pinMode(SW1, INPUT);
+  pinMode(SW2, INPUT);
+}
+
+void loop()
+{
+  digitalWrite(LED1, digitalRead(SW1) & digitalRead(SW2));
+}
